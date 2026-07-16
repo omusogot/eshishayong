@@ -12,6 +12,7 @@ export default async function UsersPage() {
         <div className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-orange">User management</p>
           <h1 className="mt-2 text-3xl font-black text-charcoal">Users</h1>
+          <p className="mt-2 text-sm text-charcoal/70">Review learner activity, roles, and account status in one place.</p>
         </div>
         <div className="grid gap-4">
           {users.map((user) => (
@@ -20,7 +21,10 @@ export default async function UsersPage() {
                 <p className="font-semibold text-charcoal">{user.name ?? user.email}</p>
                 <p className="text-sm text-charcoal/70">{user.email}</p>
               </div>
-              <span className="rounded-full bg-orange/10 px-3 py-1 text-sm font-semibold text-orange">{user.role?.name ?? 'STUDENT'}</span>
+              <div className="flex items-center gap-3">
+                <span className="rounded-full bg-orange/10 px-3 py-1 text-sm font-semibold text-orange">{user.role?.name ?? 'STUDENT'}</span>
+                <span className="rounded-full bg-charcoal/5 px-3 py-1 text-sm font-semibold text-charcoal/70">Active</span>
+              </div>
             </div>
           ))}
         </div>
